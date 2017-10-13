@@ -1,0 +1,29 @@
+// Variables
+$red: #D71B14;
+$gray: #F1F1F1;
+$black: #000;
+
+
+// Helpers
+.clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Mixins
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

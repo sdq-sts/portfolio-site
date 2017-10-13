@@ -1,0 +1,16 @@
+.projects {
+  &__title {
+    text-align: center;
+  }
+}
+
+.project {
+  &__img {
+    width: 60%;
+    margin: 0 auto;
+
+    > img {
+      width: 100%;
+    }
+  }
+}
