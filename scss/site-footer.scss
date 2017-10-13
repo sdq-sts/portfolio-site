@@ -1,0 +1,56 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  position: relative;
+
+  &__copyright,
+  &__up,
+  &__github-link {
+    color: $red;
+    text-transform: uppercase;
+    font-size: .8em;
+    margin: 0;
+    font-weight: 700;
+  }
+
+  &__copyright,
+  &__github-link {
+    border: 1px solid $black;
+    padding: 1.5em 4em;
+    width: 30%;
+    text-align: center;
+  }
+
+  &__copyright {
+
+  }
+
+  &__up {
+    cursor: pointer;
+    padding: 1.5em 0;
+    font-size: 1.5em;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-80%) rotate(-90deg);
+
+    &:after {
+      content: "";
+      display: block;
+      width: 4em;
+      height: 2px;
+      background: $black;
+      position: relative;
+      top: -.5em;
+      left: -110%;
+    }
+  }
+
+  &__github-link {
+    > a {
+      text-decoration: none;
+      color: $red;
+    } 
+  }
+}
