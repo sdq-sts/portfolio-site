@@ -1,16 +1,20 @@
-const config = require('./config.json')
+// const config = require('./config.json')
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const extractSass = new ExtractTextPlugin({ filename: path.join('css', config.cssFilename) })
+const extractSass = new ExtractTextPlugin({ filename: path.join('css', 'style.css') })
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const hotModule = new webpack.HotModuleReplacementPlugin()
 
 module.exports = {
   devtool: 'eval-source-map',
-  entry: config.entry,
+  entry: {
+    'index': './js/index.js',
+    'contact': './js/contact-page.js',
+    'about': './js/about-page.js'
+  },
   output: {
-    path: path.join(__dirname, '..', config.distPath),
+    path: path.join(__dirname, '..', 'dist'),
     filename: 'bundle--[name].js'
   },
 
@@ -105,8 +109,25 @@ module.exports = {
   plugins: [
     extractSass,
     hotModule,
-    new HtmlWebpackPlugin({ filename: 'index.html', template: 'src/index.html' }),
-    new HtmlWebpackPlugin({ filename: 'sobre.html', template: 'src/pages/sobre.html' }),
-    new HtmlWebpackPlugin({ filename: 'contato.html', template: 'src/pages/contato.html' })
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'src/index.html',
+      inject: true,
+      chunks: ['index']
+    }),
+
+    new HtmlWebpackPlugin({
+      filename: 'sobre.html',
+      template: 'src/pages/sobre.html',
+      inject: true,
+      chunks: ['about']
+    }),
+
+    new HtmlWebpackPlugin({
+      filename: 'contato.html',
+      template: 'src/pages/contato.html',
+      inject: true,
+      chunks: ['contact']
+    })
   ]
 }
