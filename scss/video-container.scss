@@ -1,0 +1,55 @@
+.video-container {
+  max-width: 50%;
+  position: absolute;
+  overflow: hidden;
+  height: 58.25vh;
+  right: 0;
+  top: 0;
+  
+  > video {
+    filter: grayscale(100%);
+    position: relative;
+    display: block;
+  }
+}
+
+.vertical-red-bar {
+  height: 1em;
+  background: $red;
+  z-index: 300;
+  position: absolute;
+  transform: rotate(90deg);
+  transform-origin: left bottom;
+  top: 5em;
+  left: calc(50% + 2em);
+
+  &--show {
+    animation-name: grow-bar;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+}
+
+// MEDIA QUERIES
+// @680px
+@media all and (max-width: 680px) {
+  .video-container {
+    max-width: 40%;
+  }
+
+  .vertical-red-bar {
+    left: calc(60% + 2em);
+  }
+}
+
+// @480px
+@media all and (max-width: 480px) {
+  .video-container {
+    max-width: 25%;
+  }
+
+  .vertical-red-bar {
+    height: .5em;
+    left: calc(75% + 2em);
+  }
+}

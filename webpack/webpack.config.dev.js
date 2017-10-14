@@ -105,6 +105,8 @@ module.exports = {
   plugins: [
     extractSass,
     hotModule,
-    new HtmlWebpackPlugin({ filename: 'index.html', template: 'index.html' })
+    new HtmlWebpackPlugin({ filename: 'index.html', template: 'src/index.html' }),
+    new HtmlWebpackPlugin({ filename: 'sobre.html', template: 'src/pages/sobre.html' }),
+    new HtmlWebpackPlugin({ filename: 'contato.html', template: 'src/pages/contato.html' })
   ]
 }

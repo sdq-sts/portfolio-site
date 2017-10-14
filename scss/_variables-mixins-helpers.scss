@@ -27,3 +27,14 @@ $black: #000;
     clear: both;
   }
 }
+
+// Animations
+@keyframes grow-bar {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: var(--red-bar-width);
+  }
+}

@@ -1,11 +1,17 @@
 @import "~normalize.css";
 @import "variables-mixins-helpers";
 @import "site-header";
+@import "video-container";
 @import "projects-section"; 
 @import "site-footer";
 
 :root {
   --red-bar-width: 0;
+}
+
+::selection {
+  color: #fff; 
+  background: rgba(215, 27, 20, 1);
 }
 
 .container {
@@ -20,46 +26,4 @@
   width: 80%;
   margin: 0 auto;
   overflow: hidden;
-}
-
-.video-container {
-  max-width: 50%;
-  position: absolute;
-  overflow: hidden;
-  height: 58.25vh;
-  right: 0;
-  top: 0;
-  
-  > video {
-    filter: grayscale(100%);
-    position: relative;
-    display: block;
-  }
-}
-
-.vertical-red-bar {
-  height: 1em;
-  background: $red;
-  z-index: 300;
-  position: absolute;
-  transform: rotate(90deg);
-  transform-origin: left bottom;
-  top: 5em;
-  left: calc(50% + 1em);
-
-  &--show {
-    animation-name: grow-bar;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-  }
-}
-
-@keyframes grow-bar {
-  0% {
-    width: 0;
-  }
-
-  100% {
-    width: var(--red-bar-width);
-  }
 }
