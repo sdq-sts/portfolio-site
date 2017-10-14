@@ -7,21 +7,22 @@
     position: absolute;
     top: 1em;
     font-size: 8em;
-    margin-top: 9em / 5;
+    margin-top: 1em;
     color: $gray;
     width: 100%;
     max-width: 100%;
     font-weight: 900;
     letter-spacing: 2vw;
     text-align: center;
+    z-index: -1;
   }
 }
 
 .project {
-  position: relative;
   display: flex;
   margin-bottom: 6em;
   align-items: center;
+  z-index: 100;
 
   &__title {
     cursor: pointer;
@@ -48,6 +49,7 @@
 }
 
 // MEDIA QUERIES
+
 // @1024px
 @media all and (max-width: 1024px) {
   .projects {

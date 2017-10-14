@@ -11,7 +11,7 @@ module.exports = {
   entry: config.entry,
   output: {
     path: path.join(__dirname, '..', config.distPath),
-    filename: path.join('js', config.jsFilename)
+    filename: 'bundle--[name].js'
   },
 
   devServer: {

@@ -4,6 +4,7 @@
 @import "video-container";
 @import "projects-section"; 
 @import "site-footer";
+@import "project-details";
 
 :root {
   --red-bar-width: 0;
@@ -17,6 +18,7 @@
 .container {
   @extend .clearfix;
   -webkit-font-smoothing: antialiased;
+  position: relative;
 }
 
 .site {
@@ -26,4 +28,13 @@
   width: 80%;
   margin: 0 auto;
   overflow: hidden;
+}
+
+// MEDIA QUERIES
+
+// @780px
+@media all and (max-width: 780px) {
+  .site {
+    width: 90%;
+  }
 }

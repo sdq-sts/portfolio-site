@@ -38,3 +38,24 @@ $black: #000;
     width: var(--red-bar-width);
   }
 }
+
+@keyframes show-cover {
+  0% {
+    transform: translateX(-101%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hide-cover {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(101%);
+  }
+}
+
