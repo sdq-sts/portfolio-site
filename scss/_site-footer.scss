@@ -41,6 +41,11 @@
       top: -.5em;
       left: -110%;
     }
+
+    > a {
+      color: $red;
+      text-decoration: none;
+    }
   }
 
   &__github-link {
