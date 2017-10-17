@@ -1,22 +1,23 @@
-import setProjectInfo from './setProjectInfo'
-import projectsDetails from './projectsDetails'
-
-const verticalRedBar = document.querySelector('.vertical-red-bar')
-const projectDetailsElm = document.querySelector('.project-details')
 const projectsElms = Array.from(document.querySelectorAll('.project'))
-
-function animateIn (elm, cl) {
-  elm.classList.add(cl)
-}
+const verticalRedBar = document.querySelector('.vertical-red-bar')
 
 function setAnimations () {
+  addVerticalRedBarAnimation()
+  addProjectsInfoAnimation()
+}
+
+function addVerticalRedBarAnimation () {
   if (verticalRedBar.classList.contains('vertical-red-bar--show')) {
     verticalRedBar.classList.remove('vertical-red-bar--show')
   }
 
-  setTimeout(() => {
-    verticalRedBar.classList.add('vertical-red-bar--show')
-  }, 800)
+  verticalRedBar.classList.add('vertical-red-bar--show')
+}
+
+function addProjectsInfoAnimation () {
+  const sleepingSwanInfo = document.querySelector('.project-info.sleeping-swan')
+  const dotaQuotesInfo = document.querySelector('.project-info.dota-quotes')
+  const inTimeInfo = document.querySelector('.project-info.in-time')
 
   projectsElms.map((elm) => {
     const children = Array.from(elm.children)
@@ -24,18 +25,19 @@ function setAnimations () {
     children.map((child) => {
       child.addEventListener('click', (e) => {
         if (elm.classList.contains('sleeping-swan')) {
-          setProjectInfo('sleeping-swan', projectDetailsElm, projectsDetails)
-          animateIn(projectDetailsElm, 'project-details--show')
-        } else if (elm.classList.contains('its-time')) {
-          setProjectInfo('its-time', projectDetailsElm, projectsDetails)
-          animateIn(projectDetailsElm, 'project-details--show')
+          animateIn(sleepingSwanInfo, 'project-info--show')
         } else if (elm.classList.contains('dota-quotes')) {
-          setProjectInfo('dota-quotes', projectDetailsElm, projectsDetails)
-          animateIn(projectDetailsElm, 'project-details--show')
+          animateIn(dotaQuotesInfo, 'project-info--show')
+        } else if (elm.classList.contains('in-time')) {
+          animateIn(inTimeInfo, 'project-info--show')
         }
       })
     })
   })
+}
+
+function animateIn (elm, cl) {
+  elm.classList.add(cl)
 }
 
 export default setAnimations

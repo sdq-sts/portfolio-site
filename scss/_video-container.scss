@@ -24,8 +24,9 @@
   left: calc(50% + 2em);
 
   &--show {
-    animation-name: grow-bar;
+    animation-name: grow-v-bar;
     animation-duration: 2s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
   }
 }

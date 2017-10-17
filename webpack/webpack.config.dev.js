@@ -9,8 +9,8 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: {
     'index': './js/index.js',
-    'contact': './js/contact-page.js',
-    'about': './js/about-page.js'
+    'contact': './js/pages/contact-page.js',
+    'about': './js/pages/about-page.js'
   },
   output: {
     path: path.join(__dirname, '..', 'dist'),

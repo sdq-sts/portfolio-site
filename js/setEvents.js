@@ -1,34 +1,39 @@
 import setStyles from './setStyles'
 
 export default () => {
-  const closeIcon = document.querySelector('.project-details__close-icon')
-  const projectDetailsElm = document.querySelector('.project-details')
+  const closeBtns = Array.from(document.querySelectorAll('.project-data__close-btn'))
+  const projectsInfo = Array.from(document.querySelectorAll('.project-info'))
   const loadingCover = document.querySelector('.loading-cover')
 
-  closeIcon.addEventListener('click', (e) => {
-    projectDetailsElm.classList.add('project-details--hide')
+  closeBtns.map((btn) => {
+    btn.addEventListener('click', (e) => {
+      projectsInfo.map((elm) => {
+        let parent = btn.parentNode.parentNode.parentNode
+        parent.classList.add('project-info--hide')
+      })
+    })
   })
 
-  projectDetailsElm.addEventListener('animationend', (e) => {
-    if (e.animationName === 'hide-cover') {
-      document.body.style.overflow = 'auto'
-      projectDetailsElm.classList.remove('project-details--show')
-      projectDetailsElm.classList.remove('project-details--hide')
-    } else if (e.animationName === 'show-cover') {
-      document.body.style.overflow = 'hidden'
-    }
-  })
+  projectsInfo.map((elm) => {
+    elm.addEventListener('animationend', function (e) {
+      if (e.animationName === 'hide-cover') {
+        elm.classList.remove('project-info--show')
+        elm.classList.remove('project-info--hide')
+      }
 
-  projectDetailsElm.addEventListener('animationstart', (e) => {
-    if (e.animationName === 'hide-cover') {
-      document.body.style.overflow = 'auto'
-    } else if (e.animationName === 'show-cover') {
-      document.body.style.overflow = 'hidden'
-    }
+      if (e.animationName === 'show-cover') {
+        document.body.style.overflow = 'hidden'
+      }
+    })
+
+    elm.addEventListener('animationstart', function (e) {
+      if (e.animationName === 'hide-cover') {
+        document.body.style.overflow = 'auto'
+      }
+    })
   })
 
   window.addEventListener('resize', (e) => { setStyles() })
-
-  loadingCover.classList.add('loading-cover--hide')
   document.body.style.overflow = 'auto'
+  loadingCover.classList.add('loading-cover--hide')
 }

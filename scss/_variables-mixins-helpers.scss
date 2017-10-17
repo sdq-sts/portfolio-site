@@ -3,7 +3,6 @@ $red: #D71B14;
 $gray: #F1F1F1;
 $black: #000;
 
-
 // Helpers
 .clearfix {
   &:before,
@@ -29,7 +28,7 @@ $black: #000;
 }
 
 // Animations
-@keyframes grow-bar {
+@keyframes grow-v-bar {
   0% {
     width: 0;
   }
@@ -39,9 +38,19 @@ $black: #000;
   }
 }
 
+@keyframes grow-h-bar {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 60%;
+  }
+}
+
 @keyframes show-cover {
   0% {
-    transform: translateX(-101%);
+    transform: translateX(101%);
   }
 
   100% {
@@ -55,7 +64,7 @@ $black: #000;
   }
 
   100% {
-    transform: translateX(101%);
+    transform: translateX(-101%);
   }
 }
 

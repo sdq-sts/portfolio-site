@@ -4,7 +4,7 @@
 @import "video-container";
 @import "projects-section"; 
 @import "site-footer";
-@import "project-details";
+@import "project-info";
 
 :root {
   --red-bar-width: 0;
@@ -27,7 +27,6 @@
   max-width: 1200px;
   width: 80%;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 // MEDIA QUERIES
