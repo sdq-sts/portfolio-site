@@ -1,14 +1,5 @@
 @import "~normalize.css";
 @import "common/variables-mixins-helpers";
-@import "page-main/site-header";
-@import "page-main/video-container";
-@import "page-main/projects-section"; 
-@import "page-main/site-footer";
-@import "page-main/project-info";
-
-:root {
-  --red-bar-width: 0;
-}
 
 ::selection {
   color: #fff; 

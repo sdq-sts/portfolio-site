@@ -1,1 +1,1 @@
-console.log('TO NA ABOUT')
+import '../../scss/about.scss'
