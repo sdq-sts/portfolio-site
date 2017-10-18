@@ -7,8 +7,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: {
     'index': './js/index.js',
-    'contact': './js/contact-page.js',
-    'about': './js/about-page.js'
+    'contact': './js/pages/contact-page.js',
+    'about': './js/pages/about-page.js'
   },
   output: {
     path: path.join(__dirname, '..', 'dist'),
@@ -119,14 +119,14 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       filename: 'sobre.html',
-      template: 'src/pages/sobre.html',
+      template: 'src/sobre.html',
       inject: true,
       chunks: ['about']
     }),
 
     new HtmlWebpackPlugin({
       filename: 'contato.html',
-      template: 'src/pages/contato.html',
+      template: 'src/contato.html',
       inject: true,
       chunks: ['contact']
     })

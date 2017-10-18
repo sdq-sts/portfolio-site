@@ -1,5 +1,7 @@
 @import "~normalize.css";
 @import "common/variables-mixins-helpers";
+@import "page-about/header";
+@import "page-about/info";
 
 ::selection {
   color: #fff; 

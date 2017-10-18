@@ -68,3 +68,14 @@ $black: #000;
   }
 }
 
+@keyframes about-page--grow-red-bar {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 55vh;
+  }
+}
+
+

@@ -117,14 +117,14 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       filename: 'sobre.html',
-      template: 'src/pages/sobre.html',
+      template: 'src/sobre.html',
       inject: true,
       chunks: ['about']
     }),
 
     new HtmlWebpackPlugin({
       filename: 'contato.html',
-      template: 'src/pages/contato.html',
+      template: 'src/contato.html',
       inject: true,
       chunks: ['contact']
     })

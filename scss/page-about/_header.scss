@@ -1,0 +1,59 @@
+.header {
+  @extend .clearfix;
+  position: relative;
+}
+
+.vertical-red-bar {
+  height: 1em;
+  background: $red;
+  position: absolute;
+  right: 0;
+  width: 0;
+  top: -1em;
+  transform-origin: bottom right;
+  transform: rotate(-90deg);
+
+  &--show {
+    animation: about-page--grow-red-bar;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+}
+
+.header-title {
+  margin: 3em 0;
+
+  &__first-name,
+  &__last-name {
+    font-size: 8em;
+    color: $red;
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: 10px;
+    margin: 0;
+    display: block;
+    font-family: 'Six Caps', sans-serif;
+  }
+}
+
+// MEDIA QUERIES
+
+// @780px
+@media all and (max-width: 780px) {
+  .header-title {
+    margin: 3em 0;
+  
+    &__first-name,
+    &__last-name {
+      font-size: 6em;
+    }
+  }
+}
+
+// @480px
+@media all and (max-width: 480px) {
+  .vertical-red-bar {
+    height: .5em;
+  }
+}

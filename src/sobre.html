@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Six+Caps" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <title>Boilerplate Page</title>
+</head>
+<body>
+  <style>
+    body {
+      overflow: hidden;
+    }
+
+    .loading-cover {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #fff;
+      z-index: 2000;
+    }
+
+    .loading-cover--hide {
+      animation-name: fade-out;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+
+    .spinner {
+      margin: 100px auto 0;
+      width: 70px;
+      text-align: center;
+    }
+
+    .spinner > div {
+      width: 18px;
+      height: 18px;
+      background-color: #333;
+
+      border-radius: 100%;
+      display: inline-block;
+      -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+      animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    }
+
+    .spinner .bounce1 {
+      -webkit-animation-delay: -0.32s;
+      animation-delay: -0.32s;
+    }
+
+    .spinner .bounce2 {
+      -webkit-animation-delay: -0.16s;
+      animation-delay: -0.16s;
+    }
+
+    @-webkit-keyframes sk-bouncedelay {
+      0%, 80%, 100% { -webkit-transform: scale(0) }
+      40% { -webkit-transform: scale(1.0) }
+    }
+
+    @keyframes sk-bouncedelay {
+      0%, 80%, 100% { 
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      } 40% { 
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+      }
+    }
+
+    @keyframes fade-out {
+      0% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 0;
+      }
+      
+      100% {
+        opacity: 0;
+        z-index: -2;
+        display: none;
+      }
+    }
+  </style>
+
+  <div class="loading-cover">
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
+
+  <div class="container about">
+    <main class="site">
+
+
+      <header class="site__header header">
+          <div class="vertical-red-bar"></div>
+          <p class="header__title header-title">
+            <span class="header-title__first-name">sdq</span><span class="header-title__last-name">sts</span>
+          </p>
+        </header>
+
+        <section class="about-info">
+          <h1 class="about-info__name">Sadraque Santos</h1>
+
+          <p class="about-info__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed minus esse laboriosam voluptatem quaerat quidem, et ab similique pariatur?
+            Molestias ipsum earum quo beatae qui fugiat doloremque similique vitae blanditiis nemo, et, quisquam laudantium provident asperiores nulla cumque debitis iste consequatur.
+            Quasi, minima nihil facere harum voluptates ut, iure laudantium laborum esse, ad a doloremque! Modi eligendi culpa nostrum.
+            Esse culpa molestias quos ipsam! Animi voluptates, labore natus itaque iste a eveniet modi unde quod et illo velit aliquam fugit dolorum doloremque,
+            autem eligendi, molestiae nobis est eum consectetur nostrum recusandae! Numquam perferendis assumenda eligendi provident molestias iusto, laudantium quaerat?
+          </p>
+
+          <div class="about-info__links info-links">
+            <a href="https://www.facebook.com/sadraquesantos" class="info-links__facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> facebook</a>
+            <a href="#" class="info-links__email"><i class="fa fa-envelope" aria-hidden="true"></i> email</a>
+            <a href="https://github.com/sdq-sts" class="info-links__github" target="_blank"><i class="fa fa-github-alt" aria-hidden="true"></i> github</a>
+          </div>
+
+          <nav class="about-info__navigation">
+            <a href="/">Home <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+          </nav>
+        </section>
+    </main>
+  </div>
+</body>
+</html>

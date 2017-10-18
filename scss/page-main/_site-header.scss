@@ -7,13 +7,13 @@
 
   &__first-name,
   &__last-name {
-    margin: 0;
     font-size: 4em;
     color: $red;
     font-weight: 400;
     line-height: 0.95;
     letter-spacing: 10px;
     margin: 0;
+    display: block;
     font-family: 'Six Caps', sans-serif;
   }
 }
