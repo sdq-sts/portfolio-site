@@ -1,14 +1,14 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const extractSass = new ExtractTextPlugin({ filename: path.join('css', 'style.css') })
+const extractSass = new ExtractTextPlugin({ filename: path.join('css', '[name].bundle.css') })
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
-    'index': './js/index.js',
-    'contact': './js/pages/contact-page.js',
-    'about': './js/pages/about-page.js'
+    'index': './js/page-index.js',
+    'contact': './js/page-contact.js',
+    'about': './js/page-about.js'
   },
   output: {
     path: path.join(__dirname, '..', 'dist'),
@@ -23,7 +23,7 @@ module.exports = {
         loader: 'html-loader',
         options: {
           interpolate: true,
-          minimize: true,
+          minimize: false,
           removeAttributeQuotes: false,
           attrs: [':src']
         }
@@ -42,7 +42,7 @@ module.exports = {
             { loader: 'css-loader' },
             { loader: 'resolve-url-loader' },
             { loader: 'postcss-loader', options: { plugins: () => [require('autoprefixer')] } },
-            { loader: 'sass-loader', options: { sourceMap: true } }
+            { loader: 'sass-loader', options: { sourceMap: false } }
           ],
 
           fallback: 'style-loader'
@@ -93,7 +93,7 @@ module.exports = {
       { // Videos
         test: /\.(webm|mp4)$/i,
         loader: 'file-loader',
-        query: { useRelativePath: false, publicPath: 'assets/', outputPath: 'assets/', name: '/[name].[ext]' }
+        query: { useRelativePath: false, publicPath: 'assets/', outputPath: 'assets/', name: '[name].[ext]' }
       }
 
     ]

@@ -1,16 +1,16 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const extractSass = new ExtractTextPlugin({ filename: path.join('css', 'style.css') })
+const extractSass = new ExtractTextPlugin({ filename: path.join('css', 'style.css'), allChunks: true })
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const hotModule = new webpack.HotModuleReplacementPlugin()
 
 module.exports = {
   devtool: 'eval-source-map',
   entry: {
-    'index': './js/index.js',
-    'contact': './js/pages/contact-page.js',
-    'about': './js/pages/about-page.js'
+    'index': './js/page-index.js',
+    'contact': './js/page-contact.js',
+    'about': './js/page-about.js'
   },
   output: {
     path: path.join(__dirname, '..', 'dist'),
