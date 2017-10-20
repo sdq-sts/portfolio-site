@@ -99,7 +99,7 @@ module.exports = {
       { // Videos
         test: /\.(webm|mp4)$/i,
         loader: 'file-loader',
-        query: { useRelativePath: false, publicPath: 'assets/', outputPath: 'assets/', name: '/[name].[ext]' }
+        query: { useRelativePath: false, publicPath: 'assets/', outputPath: 'assets/', name: '[name].[ext]' }
       }
 
     ]
