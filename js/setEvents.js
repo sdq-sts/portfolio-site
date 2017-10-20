@@ -23,7 +23,6 @@ export default () => {
     })
 
     elm.addEventListener('animationstart', function (e) {
-      console.log(e.elapsedTime)
       if (e.animationName === 'hide-cover') {
         document.body.style.overflow = 'auto'
       }
