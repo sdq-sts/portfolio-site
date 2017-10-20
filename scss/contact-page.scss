@@ -1,17 +1,8 @@
 @import "~normalize.css";
 @import "common/variables-mixins-helpers";
-@import "page-main/site-header";
-@import "page-main/video-container";
-@import "page-main/projects-section"; 
-@import "page-main/site-footer";
-@import "page-main/project-info";
-
-@import 'about-page';
-@import 'contact-page';
-
-:root {
-  --red-bar-width: 0;
-}
+@import "page-contact/header";
+@import "page-contact/info";
+@import "page-contact/form";
 
 ::selection {
   color: #fff; 

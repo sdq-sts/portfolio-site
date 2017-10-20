@@ -14,14 +14,14 @@
   
   &--show {
     animation-name: show-cover;
-    animation-duration: .3s;
+    animation-duration: .5s;
     animation-fill-mode: forwards;
     display: block;
   }
 
   &--hide {
     animation-name: hide-cover;
-    animation-duration: .3s;
+    animation-duration: .5s;
     animation-fill-mode: forwards;
   }
 }

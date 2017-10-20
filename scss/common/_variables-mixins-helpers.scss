@@ -38,16 +38,6 @@ $black: #000;
   }
 }
 
-@keyframes grow-h-bar {
-  0% {
-    width: 0;
-  }
-
-  100% {
-    width: 60%;
-  }
-}
-
 @keyframes show-cover {
   0% {
     transform: translateX(101%);
@@ -68,7 +58,7 @@ $black: #000;
   }
 }
 
-@keyframes about-page--grow-red-bar {
+@keyframes page--grow-red-bar {
   0% {
     width: 0;
   }

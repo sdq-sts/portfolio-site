@@ -1,4 +1,4 @@
-import '../scss/about.scss'
+import '../scss/about-page.scss'
 
 window.addEventListener('load', (e) => {
   const loadingCover = document.querySelector('.loading-cover')

@@ -20,15 +20,16 @@ export default () => {
         elm.classList.remove('project-info--show')
         elm.classList.remove('project-info--hide')
       }
-
-      if (e.animationName === 'show-cover') {
-        document.body.style.overflow = 'hidden'
-      }
     })
 
     elm.addEventListener('animationstart', function (e) {
+      console.log(e.elapsedTime)
       if (e.animationName === 'hide-cover') {
         document.body.style.overflow = 'auto'
+      }
+
+      if (e.animationName === 'show-cover') {
+        document.body.style.overflow = 'hidden'
       }
     })
   })
